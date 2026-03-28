@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find 'C:\\\\Users\\\\ASUS\\\\Downloads\\\\Spacehack 2026\\\\AppTests\\\\spacehack-app' -maxdepth 2 -type f -name *.config.*)",
+      "Bash(grep -E \"\\\\.md$|\\\\.config\")"
+    ]
+  }
+}
