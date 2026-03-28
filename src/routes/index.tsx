@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
 import { GlobeView } from '../components/globe/GlobeView'
 import { StorytellingEngine, NarratorHUD } from '../components/globe/StorytellingEngine'
+import naevcoLogo from '../assets/logo-NAEVCO.png'
 
 export const Route = createFileRoute('/')({ component: LandingPage })
 
@@ -49,7 +50,7 @@ function LandingPage() {
               /* Idle: big logo, overflow hidden to cut the built-in PNG padding */
               <div className="overflow-hidden" style={{ width: 200, height: 52 }}>
                 <img
-                  src="/src/assets/logo-NAEVCO.png"
+                  src={naevcoLogo}
                   alt="NAEVCO"
                   style={{
                     width: 260,
@@ -65,7 +66,7 @@ function LandingPage() {
               <div className="flex items-center gap-3">
                 <div className="overflow-hidden" style={{ width: 100, height: 28 }}>
                   <img
-                    src="/src/assets/logo-NAEVCO.png"
+                    src={naevcoLogo}
                     alt="NAEVCO"
                     style={{ width: 130, marginLeft: -15, marginTop: -9, objectFit: 'contain' }}
                   />
