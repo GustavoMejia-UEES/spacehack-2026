@@ -430,10 +430,19 @@ export function StorytellingEngine({
             className="flex-1 bg-white/[0.04] border border-white/[0.06] py-2.5 rounded-xl text-[8.5px] uppercase disabled:opacity-20 font-black">
             ← Prev
           </button>
-          <button onClick={() => onMomentChange(Math.min(currentMoment + 1, 7))} disabled={currentMoment === 7}
-            className="flex-[2] bg-[#37A7B3] text-[#050812] font-black py-2.5 rounded-xl text-[8.5px] uppercase tracking-widest">
-            Next →
-          </button>
+          {currentMoment === 7 ? (
+            <button
+              onClick={() => onSelect(null)}
+              className="flex-[2] bg-[#37A7B3] text-[#050812] font-black py-2.5 rounded-xl text-[8.5px] uppercase tracking-widest"
+            >
+              Pick a Corridor →
+            </button>
+          ) : (
+            <button onClick={() => onMomentChange(Math.min(currentMoment + 1, 7))}
+              className="flex-[2] bg-[#37A7B3] text-[#050812] font-black py-2.5 rounded-xl text-[8.5px] uppercase tracking-widest">
+              Next →
+            </button>
+          )}
         </div>
       </div>
 
@@ -457,11 +466,18 @@ export function StorytellingEngine({
                   className={`h-1 rounded-full cursor-pointer transition-all duration-400 ${m === currentMoment ? 'w-7 bg-[#37A7B3]' : 'w-1.5 bg-white/10 hover:bg-white/20'}`} />
               ))}
             </div>
-            <div className="flex gap-1.5">
+            <div className="flex gap-1.5 items-center">
               <button onClick={() => onMomentChange(Math.max(currentMoment - 1, 1))} disabled={currentMoment <= 1}
                 className="h-6 w-6 rounded-full border border-white/10 text-white/40 hover:text-white hover:bg-white/5 disabled:opacity-20 transition-all text-xs flex items-center justify-center">←</button>
-              <button onClick={() => onMomentChange(Math.min(currentMoment + 1, 7))} disabled={currentMoment >= 7}
-                className="h-6 w-6 rounded-full border border-[#37A7B3]/35 text-[#37A7B3] hover:bg-[#37A7B3]/15 disabled:opacity-20 transition-all text-xs flex items-center justify-center">→</button>
+              {currentMoment >= 7 ? (
+                <button onClick={() => onSelect(null)}
+                  className="h-6 px-2.5 rounded-full border border-[#37A7B3]/50 text-[#37A7B3] hover:bg-[#37A7B3]/15 transition-all text-[8px] font-black uppercase tracking-wider flex items-center">
+                  Next Corridor →
+                </button>
+              ) : (
+                <button onClick={() => onMomentChange(Math.min(currentMoment + 1, 7))}
+                  className="h-6 w-6 rounded-full border border-[#37A7B3]/35 text-[#37A7B3] hover:bg-[#37A7B3]/15 transition-all text-xs flex items-center justify-center">→</button>
+              )}
             </div>
           </div>
         </div>
