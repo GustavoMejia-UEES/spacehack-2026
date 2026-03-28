@@ -248,19 +248,19 @@ export function StorytellingEngine({
         style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
 
         {/* ── MOBILE idle ────────────────────────────────────────────────── */}
-        <div className="md:hidden flex flex-col h-full px-4 py-3 gap-3 overflow-y-auto no-scrollbar">
-          <div>
-            <h3 className="text-[#37A7B3] font-black text-sm uppercase tracking-[0.3em] mb-0.5">Select a Corridor</h3>
-            <p className="text-white/30 text-[10.5px] font-medium">3 green shipping routes — tap to analyze.</p>
+        <div className="md:hidden flex flex-col h-full px-4 pt-3 pb-2 gap-2 overflow-hidden">
+          <div className="flex-shrink-0">
+            <h3 className="text-[#37A7B3] font-black text-xs uppercase tracking-[0.3em] mb-0.5">Select a Corridor</h3>
+            <p className="text-white/30 text-[9.5px] font-medium">3 green shipping routes — tap to analyze.</p>
           </div>
-          <div className="flex flex-col gap-2.5">
+          <div className="flex flex-col gap-2 flex-1 min-h-0">
             {corridors.map((c, idx) => {
               const IconComp = COR_ICONS[idx % 3] ?? FaGlobeAmericas;
               return (
                 <button
                   key={c.properties.corridor_key}
                   onClick={() => onSelect(c)}
-                  className="group relative flex items-center gap-3.5 rounded-2xl bg-white/[0.03] border border-white/[0.07] px-4 py-4 text-left overflow-hidden hover:bg-white/[0.06] transition-all active:scale-[0.98]"
+                  className="group relative flex items-center gap-3 rounded-2xl bg-white/[0.03] border border-white/[0.07] px-3.5 py-3 text-left overflow-hidden hover:bg-white/[0.06] transition-all active:scale-[0.98] flex-1 min-h-0"
                   style={{ borderLeft: `3px solid ${c.properties.color}` }}
                 >
                   {/* Hover glow */}

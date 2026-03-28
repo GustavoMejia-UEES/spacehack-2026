@@ -112,7 +112,11 @@ function LandingPage() {
 
       {/* ── TACTICAL DATA PANEL ────────────────────────────────────────────── */}
       <footer className={`
-        ${selectedCorridor ? 'h-[20vh] min-h-[145px]' : 'h-[20vh] min-h-[145px]'}
+        ${
+          selectedCorridor
+            ? 'h-[20vh] min-h-[145px]'                          /* selected: compact */
+            : 'h-[60vh] min-h-[360px] md:h-[20vh] md:min-h-[145px]' /* idle: tall on mobile, normal on desktop */
+        }
         flex-shrink-0 border-t border-white/8 bg-[#080b12]/96 backdrop-blur-2xl
         relative z-20 overflow-hidden transition-all duration-500
       `}>
