@@ -22,7 +22,7 @@ function LandingPage() {
   return (
     <div className="flex flex-col h-screen w-full bg-[#0a0a1a] overflow-hidden text-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
 
-      {/* ── HEADER ─────────────────────────────────────────────────────────── */}
+      {/* ── HEADER ─────────────────────────────────────────────────────s────── */}
       <header className={`
         ${selectedCorridor ? 'h-[56px]' : 'h-[72px] lg:h-[80px]'}
         flex-shrink-0 border-b border-white/8 bg-[#0d1117]/80 backdrop-blur-xl
